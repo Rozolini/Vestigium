@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "crates/vmm",
+    "crates/trace",
+    "crates/engine",
+    "crates/cli",
+    "crates/test_target",
+    "target_app",
+]
+resolver = "2"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+
+# Profile overrides for the guest binary
+[profile.release.package.vestigium_test]
+opt-level = "s"
+codegen-units = 1

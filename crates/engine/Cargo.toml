@@ -1,0 +1,23 @@
+# Core execution engine for deterministic record and replay.
+[package]
+name = "engine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Internal workspace crates
+vmm = { path = "../vmm" }
+trace = { path = "../trace" }
+
+# External crates
+# Windows Hypervisor Platform (WHP) API bindings
+windows = { version = "0.62.2", features = ["Win32_System_Hypervisor"] }
+# Binary format parsing (PE files)
+goblin = "0.10.5"
+# State and trace serialization
+serde = { version = "1.0.228", features = ["derive"] }
+bincode = "1.3"
+
+[dev-dependencies]
+# Required for unit tests involving snapshot serialization
+bincode = "1.3"

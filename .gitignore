@@ -1,0 +1,25 @@
+# Rust / Cargo
+/target/
+**/target/
+**/*.rs.bk
+
+# Engine generated files
+*.bin
+trace.bin
+*.log
+
+# Windows / MSVC build artifacts
+*.pdb
+*.lib
+*.exp
+*.ilk
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db

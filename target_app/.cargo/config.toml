@@ -1,0 +1,8 @@
+# Target-specific linker configuration for MSVC.
+[target.x86_64-pc-windows-msvc]
+rustflags = [
+    # Override the default entry point for bare-metal execution.
+    "-C", "link-arg=/ENTRY:_start",
+    # Specify the console subsystem for the output binary.
+    "-C", "link-arg=/SUBSYSTEM:console",
+]

@@ -1,0 +1,15 @@
+[package]
+name = "vestigium_test"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+autobins = false
+autotests = false
+
+[dependencies]
+
+[[bin]]
+name = "vestigium_test"
+path = "src/main.rs"
+test = false
+harness = false

@@ -1,0 +1,11 @@
+# Virtual Machine Monitor (VMM) core functionality.
+[package]
+name = "vmm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Windows Hypervisor Platform (WHP) API bindings.
+windows = { version = "0.62.2", features = [
+    "Win32_System_Hypervisor",
+] }

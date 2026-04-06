@@ -1,0 +1,19 @@
+# CLI entry point configuration for the Vestigium hypervisor
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Internal workspace crates
+engine = { path = "../engine" }
+vmm = { path = "../vmm" }
+trace = { version = "0.1.0", path = "../trace" }
+
+# External crates
+# Command-line argument parsing
+clap = { version = "4.5", features = ["derive"] }
+# Windows Hypervisor Platform (WHP) API bindings
+windows = { version = "0.62.2", features = ["Win32_System_Hypervisor"] }
+# High-performance binary serialization for record/replay traces
+bincode = "1.3.3"
